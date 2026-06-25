@@ -221,6 +221,16 @@ function closeAuthModal() {
     authOverlay.classList.add('hidden');
 }
 
+function isValidGoogleEmailOrPhone(value) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^\+?[0-9]{7,15}$/;
+    return emailPattern.test(value) || phonePattern.test(value);
+}
+
+function isValidAuthPassword(password) {
+    return password.length >= 8 && /[0-9]/.test(password);
+}
+
 function requireLogin() {
     if (!authState.currentUser) {
         showAuthModal('signin');
@@ -305,7 +315,15 @@ function handleAuthSubmit(event) {
     const username = authUsername.value.trim();
     const password = authPassword.value.trim();
     if (!username || !password) {
-        alert('Please enter both username and password.');
+        alert('Please enter both your Google email or phone number and password.');
+        return;
+    }
+    if (!isValidGoogleEmailOrPhone(username)) {
+        alert('Please enter a valid Google email address or phone number.');
+        return;
+    }
+    if (!isValidAuthPassword(password)) {
+        alert('Password must be at least 8 characters and include at least one number.');
         return;
     }
     if (authState.mode === 'signin') {

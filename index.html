@@ -273,13 +273,14 @@
             <h3 id="authTitle">Sign In</h3>
             <form id="authForm">
                 <label class="auth-field">
-                    Username
-                    <input type="text" id="authUsername" placeholder="Enter username" required />
+                    Google email or phone number
+                    <input type="text" id="authUsername" placeholder="Enter your Google email or phone" required />
                 </label>
                 <label class="auth-field">
                     Password
-                    <input type="password" id="authPassword" placeholder="Enter password" required />
+                    <input type="password" id="authPassword" placeholder="Minimum 8 characters with a number" required />
                 </label>
+                <small class="auth-hint">Password must be at least 8 characters and include at least one number.</small>
                 <button type="submit" class="primary-btn" id="authSubmitBtn">Sign In</button>
             </form>
             <p id="authToggleText" class="auth-toggle-text">
