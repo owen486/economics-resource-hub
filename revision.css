@@ -326,36 +326,36 @@ button:hover, .primary-btn:hover {
     background: #eef2ff;
     color: #4338ca;
 }
-.flashcard-panel .panel-header,
-.planner-panel .panel-header,
-.notes-panel .panel-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.research-search {
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 1rem;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
 }
-.flashcard {
-    padding: 2rem;
-    border-radius: 1.5rem;
-    background: #f8fafc;
-    border: 1px solid #dbeafe;
-    min-height: 170px;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #0f172a;
+.research-search input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
 }
-.flashcard-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1.25rem;
+.research-search button {
+    min-width: 140px;
+    padding: 1rem 1.4rem;
+    background: #2563eb;
+    color: white;
+    font-weight: 700;
+    border-radius: 1rem;
 }
-.research-search {
+#topicSelect {
+    border-radius: 999px;
+    border: 1px solid #cbd5e1;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    background: white;
+}
+.session-list {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1rem;
