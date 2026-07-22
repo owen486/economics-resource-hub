@@ -1,11 +1,61 @@
+﻿:root {
+    color-scheme: light;
+    --bg: #f7f9fc;
+    --surface: #ffffff;
+    --surface-strong: #f8fafc;
+    --surface-border: #e2e8f0;
+    --text: #172338;
+    --text-muted: #475569;
+    --primary: #2563eb;
+    --primary-strong: #14b8a6;
+    --accent: #22c55e;
+    --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    --card-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    --header-bg: linear-gradient(135deg, #4f46e5 0%, #22c55e 100%);
+    --header-color: white;
+    --button-bg: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+    --button-color: white;
+    --button-border: transparent;
+    --panel-bg: #ffffff;
+    --panel-border: #e0e7ff;
+    --nav-link: white;
+    --user-control-bg: rgba(255, 255, 255, 0.1);
+    --user-control-border: rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f172a;
+    --surface: #111827;
+    --surface-strong: #1f2937;
+    --surface-border: #374151;
+    --text: #f8fafc;
+    --text-muted: #cbd5e1;
+    --primary: #60a5fa;
+    --primary-strong: #22d3ee;
+    --accent: #4ade80;
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    --card-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    --header-bg: linear-gradient(135deg, #111827 0%, #0f172a 100%);
+    --header-color: white;
+    --button-bg: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+    --button-color: white;
+    --button-border: transparent;
+    --panel-bg: #111827;
+    --panel-border: #374151;
+    --nav-link: #f8fafc;
+    --user-control-bg: rgba(255, 255, 255, 0.08);
+    --user-control-border: rgba(255, 255, 255, 0.15);
+}
+
 * {
     box-sizing: border-box;
 }
 html, body {
     margin: 0;
     font-family: Inter, system-ui, sans-serif;
-    background: #f7f9fc;
-    color: #172338;
+    background: var(--bg);
+    color: var(--text);
 }
 body {
     min-height: 100vh;
@@ -17,8 +67,8 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 2rem 2rem 1rem;
-    background: linear-gradient(135deg, #4f46e5 0%, #22c55e 100%);
-    color: white;
+    background: var(--header-bg);
+    color: var(--header-color);
 }
 .site-header .brand h1 {
     font-size: clamp(2rem, 3vw, 3rem);
@@ -35,7 +85,7 @@ nav {
     gap: 1rem;
 }
 nav a {
-    color: white;
+    color: var(--nav-link);
     text-decoration: none;
     font-weight: 600;
     transition: opacity 0.2s ease;
@@ -50,55 +100,56 @@ nav a:hover {
     width: 100%;
     justify-content: flex-end;
     flex-wrap: wrap;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--user-control-bg);
     padding: 0.75rem 1rem;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--user-control-border);
 }
 .user-controls span {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--user-control-bg);
     padding: 0.65rem 0.95rem;
     border-radius: 999px;
     font-weight: 600;
-    color: white;
+    color: var(--header-color);
 }
 .secondary-btn {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: var(--user-control-bg);
+    color: var(--header-color);
+    border: 1px solid var(--user-control-border);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 .auth-modal {
     width: min(420px, 100%);
     padding: 2rem;
     border-radius: 1.5rem;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    background: linear-gradient(180deg, var(--surface-strong) 0%, var(--surface) 100%);
     box-shadow: 0 30px 70px rgba(15, 23, 42, 0.18);
 }
 .auth-field {
     display: grid;
     gap: 0.75rem;
     font-weight: 600;
-    color: #0f172a;
+    color: var(--text);
 }
 .auth-field input {
     width: 100%;
     padding: 1rem 1.1rem;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--surface-border);
     border-radius: 1rem;
-    background: #f8fafc;
+    background: var(--surface-strong);
+    color: var(--text);
     font-size: 1rem;
 }
 .auth-toggle-text {
     margin-top: 1.25rem;
-    color: #475569;
+    color: var(--text-muted);
     text-align: center;
     font-size: 0.95rem;
 }
 .auth-toggle-text button {
     background: transparent;
     border: none;
-    color: #2563eb;
+    color: var(--primary);
     font-weight: 700;
     cursor: pointer;
 }
@@ -143,7 +194,7 @@ nav a:hover {
     box-shadow: 0 22px 40px rgba(20, 184, 166, 0.28);
 }
 .hero-banner::after {
-    content: "Economics Resource Hub — build the best study path for your exams.";
+    content: "Economics Resource Hub â€” build the best study path for your exams.";
     position: absolute;
     left: 50%;
     bottom: 1.5rem;
@@ -165,14 +216,15 @@ button, .primary-btn {
     padding: 0.95rem 1.75rem;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: var(--button-color);
 }
 button:hover, .primary-btn:hover {
     transform: translateY(-2px);
 }
 #startReviewBtn,
 .primary-btn {
-    background: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
-    color: white;
+    background: var(--button-bg);
+    color: var(--button-color);
     font-weight: 700;
     box-shadow: 0 15px 35px rgba(20, 184, 166, 0.19);
 }
@@ -191,9 +243,10 @@ button:hover, .primary-btn:hover {
     box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
 }
 .section-panel {
-    background: white;
+    background: var(--panel-bg);
     border-radius: 1.5rem;
-    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--panel-border);
     margin: 1.75rem auto;
     padding: 2rem;
     max-width: 1200px;
@@ -221,7 +274,7 @@ button:hover, .primary-btn:hover {
 .owner-panel .owner-card p {
     margin: 0;
     line-height: 1.7;
-    color: #475569;
+    color: var(--text-muted);
 }
 .subject-grid {
     display: grid;
@@ -231,11 +284,12 @@ button:hover, .primary-btn:hover {
 .subject-card {
     padding: 1.75rem;
     border-radius: 1.25rem;
-    background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
-    border: 1px solid #e0e7ff;
+    background: linear-gradient(180deg, var(--surface-strong) 0%, var(--surface) 100%);
+    border: 1px solid var(--panel-border);
 }
 .subject-card h3 {
     margin-top: 0;
+    color: var(--text);
 }
 .subject-card a {
     display: block;
@@ -255,28 +309,28 @@ button:hover, .primary-btn:hover {
     display: grid;
     gap: 0.5rem;
     font-weight: 600;
-    color: #0f172a;
+    color: var(--text);
 }
 .generator-form select {
     width: 100%;
     padding: 1rem 1.1rem;
     border-radius: 1rem;
-    border: 1px solid #cbd5e1;
-    background: white;
+    border: 1px solid var(--panel-border);
+    background: var(--surface-strong);
     font-size: 1rem;
 }
-..generator-results {
+.generator-results {
     margin-top: 1.5rem;
     padding: 1.5rem;
     border-radius: 1.25rem;
-    border: 1px dashed #cbd5e1;
-    background: #f8fafc;
-    color: #334155;
+    border: 1px dashed var(--panel-border);
+    background: var(--surface-strong);
+    color: var(--text);
 }
 .unit-results-list {
     margin: 1rem 0 0;
     padding-left: 1.35rem;
-    color: #172338;
+    color: var(--text);
     line-height: 1.8;
 }
 .unit-results-list li {
@@ -291,8 +345,8 @@ button:hover, .primary-btn:hover {
 .note-link-card {
     padding: 1.5rem;
     border-radius: 1.25rem;
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-    border: 1px solid #dbeafe;
+    background: linear-gradient(180deg, var(--surface-strong) 0%, var(--surface) 100%);
+    border: 1px solid var(--panel-border);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .note-link-card a {
@@ -309,7 +363,7 @@ button:hover, .primary-btn:hover {
 }
 .note-link-card p {
     margin-bottom: 0;
-    color: #475569;
+    color: var(--text-muted);
     line-height: 1.7;
 }
 .testimonials-panel .subject-card,
@@ -323,8 +377,8 @@ button:hover, .primary-btn:hover {
     font-size: 0.9rem;
     padding: 0.5rem 0.85rem;
     border-radius: 999px;
-    background: #eef2ff;
-    color: #4338ca;
+    background: var(--surface-strong);
+    color: var(--primary);
 }
 .research-search {
     display: grid;
@@ -337,23 +391,23 @@ button:hover, .primary-btn:hover {
     width: 100%;
     padding: 1rem 1.2rem;
     border-radius: 1rem;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--panel-border);
     font-size: 1rem;
 }
 .research-search button {
     min-width: 140px;
     padding: 1rem 1.4rem;
-    background: #2563eb;
+    background: var(--button-bg);
     color: white;
     font-weight: 700;
     border-radius: 1rem;
 }
 #topicSelect {
     border-radius: 999px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--panel-border);
     padding: 0.85rem 1rem;
     font-size: 1rem;
-    background: white;
+    background: var(--surface-strong);
 }
 .session-list {
     display: grid;
@@ -366,23 +420,23 @@ button:hover, .primary-btn:hover {
     width: 100%;
     padding: 1rem 1.2rem;
     border-radius: 1rem;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--panel-border);
     font-size: 1rem;
 }
 .research-search button {
     min-width: 140px;
     padding: 1rem 1.4rem;
-    background: #2563eb;
+    background: var(--button-bg);
     color: white;
     font-weight: 700;
     border-radius: 1rem;
 }
 #topicSelect {
     border-radius: 999px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--panel-border);
     padding: 0.85rem 1rem;
     font-size: 1rem;
-    background: white;
+    background: var(--surface-strong);
 }
 .session-list {
     list-style: none;
@@ -397,15 +451,15 @@ button:hover, .primary-btn:hover {
     align-items: center;
     padding: 1.2rem 1.4rem;
     border-radius: 1.1rem;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
+    border: 1px solid var(--panel-border);
+    background: var(--surface-strong);
 }
 .session-card h4 {
     margin: 0 0 0.4rem;
 }
 .session-card p {
     margin: 0;
-    color: #475569;
+    color: var(--text-muted);
 }
 .papers-grid {
     display: grid;
@@ -414,9 +468,9 @@ button:hover, .primary-btn:hover {
 }
 .paper-card {
     padding: 1.5rem;
-    background: #fff;
+    background: var(--surface);
     border-radius: 1.25rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--panel-border);
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
 }
 .paper-card h4 {
@@ -424,14 +478,14 @@ button:hover, .primary-btn:hover {
 }
 .paper-card p {
     margin: 0 0 1rem;
-    color: #334155;
+    color: var(--text-muted);
     line-height: 1.7;
 }
 .paper-card a {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: #2563eb;
-    color: white;
+    background: var(--button-bg);
+    color: var(--button-color);
     text-decoration: none;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -439,7 +493,7 @@ button:hover, .primary-btn:hover {
 footer {
     padding: 2rem;
     text-align: center;
-    color: #475569;
+    color: var(--text-muted);
     font-size: 0.95rem;
 }
 
@@ -463,7 +517,7 @@ footer {
 .hero-image figcaption,
 .school-hero figcaption {
     margin-top: 0.75rem;
-    color: #475569;
+    color: var(--text-muted);
     font-size: 0.95rem;
     text-align: center;
 }
@@ -491,7 +545,7 @@ footer {
 .owner-bio p {
     margin: 0.75rem 0 0;
     line-height: 1.75;
-    color: #334155;
+    color: var(--text-muted);
 }
 .modal-overlay {
     position: fixed;
@@ -507,7 +561,7 @@ footer {
 }
 .modal {
     width: min(540px, 100%);
-    background: white;
+    background: var(--surface-strong);
     border-radius: 1.5rem;
     padding: 1.75rem;
     position: relative;
@@ -531,7 +585,7 @@ footer {
     display: grid;
     gap: 0.5rem;
     font-weight: 600;
-    color: #0f172a;
+    color: var(--text);
 }
 .hidden {
     display: none;
@@ -540,7 +594,7 @@ footer {
 .modal textarea {
     width: 100%;
     padding: 0.95rem 1rem;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--panel-border);
     border-radius: 0.95rem;
     font-size: 1rem;
     resize: vertical;
@@ -559,3 +613,4 @@ footer {
         justify-content: center;
     }
 }
+

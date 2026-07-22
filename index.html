@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Economics Resource Hub — First to fourth year economics revision, year-based study paths, notes and exam practice." />
+    <meta name="description" content="Economics Resource Hub â€” First to fourth year economics revision, year-based study paths, notes and exam practice." />
     <title>Economics Resource Hub</title>
     <link rel="stylesheet" href="revision.css" />
 </head>
@@ -27,6 +27,7 @@
             <a href="#research">Research</a>
         </nav>
         <div class="user-controls">
+            <button id="themeToggleBtn" class="secondary-btn">Toggle Theme</button>
             <span id="userStatus">Guest</span>
             <button id="authButton" class="primary-btn login-btn">Sign In</button>
             <button id="logoutBtn" class="secondary-btn hidden">Logout</button>
@@ -36,7 +37,7 @@
     <main>
         <section class="hero hero-banner">
             <div class="hero-copy">
-                <h2>Economics Resource Hub — your central study center for K16, K14 and K24 learners.</h2>
+                <h2>Economics Resource Hub â€” your central study center for K16, K14 and K24 learners.</h2>
                 <p>Find lecture notes, timetables, and exam-ready revision tools all in one place.</p>
                 <button id="startReviewBtn">Explore Resources</button>
             </div>
@@ -154,11 +155,11 @@
             </div>
             <div class="subject-grid">
                 <article class="subject-card">
-                    <p>“Economics Resource Hub made preparing for my K16 exams much easier. The structured guidance helped me stay focused.”</p>
+                    <p>â€œEconomics Resource Hub made preparing for my K16 exams much easier. The structured guidance helped me stay focused.â€</p>
                     <p><strong>Rita N.</strong><br/>Second Year Economics Student</p>
                 </article>
                 <article class="subject-card">
-                    <p>“Clear pathways, fast access to study materials, and helpful revision guidance all in one place.”</p>
+                    <p>â€œClear pathways, fast access to study materials, and helpful revision guidance all in one place.â€</p>
                     <p><strong>John M.</strong><br/>K14 Economics Learner</p>
                 </article>
             </div>
@@ -200,12 +201,12 @@
     </main>
 
     <footer>
-        <p>Economics Resource Hub • K16 Economics and Finance • K14 Economics Pure • K24 Economics and Statistics</p>
+        <p>Economics Resource Hub â€¢ K16 Economics and Finance â€¢ K14 Economics Pure â€¢ K24 Economics and Statistics</p>
     </footer>
 
     <div id="modalOverlay" class="modal-overlay hidden">
         <div class="modal">
-            <button class="modal-close" id="modalCloseBtn" aria-label="Close">✕</button>
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close">âœ•</button>
             <h3 id="modalTitle">Add Session</h3>
             <form id="modalForm">
                 <label>
@@ -231,7 +232,7 @@
 
     <div id="authOverlay" class="modal-overlay hidden">
         <div class="modal auth-modal">
-            <button class="modal-close" id="authCloseBtn" aria-label="Close">✕</button>
+            <button class="modal-close" id="authCloseBtn" aria-label="Close">âœ•</button>
             <h3 id="authTitle">Sign In</h3>
             <form id="authForm">
                 <label class="auth-field">
@@ -246,12 +247,17 @@
                 <button type="submit" class="primary-btn" id="authSubmitBtn">Sign In</button>
             </form>
             <p id="authToggleText" class="auth-toggle-text">
-                <span id="authToggleMessage">Don’t have an account?</span>
+                <span id="authToggleMessage">Donâ€™t have an account?</span>
                 <button id="authToggleBtn" type="button">Sign Up</button>
             </p>
         </div>
     </div>
 
     <script src="revision.js"></script>
+    <script src="theme.js"></script>
 </body>
 </html>
+
+
+
+
