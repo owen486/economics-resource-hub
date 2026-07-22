@@ -41,6 +41,7 @@ function loadTheme() {
 }
 
 function toggleTheme() {
+    debugger;
     const current = document.documentElement.dataset.theme || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     applyTheme(next);
