@@ -143,7 +143,7 @@ nav a:hover {
     box-shadow: 0 22px 40px rgba(20, 184, 166, 0.28);
 }
 .hero-banner::after {
-    content: "College of Economics & Business, Kenyatta University.";
+    content: "Economics Resource Hub — build the best study path for your exams.";
     position: absolute;
     left: 50%;
     bottom: 1.5rem;
@@ -236,6 +236,86 @@ button:hover, .primary-btn:hover {
 }
 .subject-card h3 {
     margin-top: 0;
+}
+.subject-card a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+.generator-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.generator-form {
+    display: grid;
+    gap: 1rem;
+}
+.generator-form label {
+    display: grid;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+.generator-form select {
+    width: 100%;
+    padding: 1rem 1.1rem;
+    border-radius: 1rem;
+    border: 1px solid #cbd5e1;
+    background: white;
+    font-size: 1rem;
+}
+..generator-results {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    border: 1px dashed #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+}
+.unit-results-list {
+    margin: 1rem 0 0;
+    padding-left: 1.35rem;
+    color: #172338;
+    line-height: 1.8;
+}
+.unit-results-list li {
+    margin-bottom: 0.75rem;
+}
+.lecture-notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.note-link-card {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    border: 1px solid #dbeafe;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.note-link-card a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+.note-link-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+.note-link-card h3 {
+    margin-top: 0;
+}
+.note-link-card p {
+    margin-bottom: 0;
+    color: #475569;
+    line-height: 1.7;
+}
+.testimonials-panel .subject-card,
+.contact-panel .subject-card,
+.calendar-panel .subject-card {
+    min-height: 180px;
 }
 .badge {
     display: inline-flex;

@@ -487,6 +487,64 @@ modalOverlay.addEventListener('click', event => {
     }
 });
 
+const unitYearSelect = document.getElementById('unitYearSelect');
+const unitSubjectSelect = document.getElementById('unitSubjectSelect');
+const generateUnitsBtn = document.getElementById('generateUnitsBtn');
+const unitGeneratorResults = document.getElementById('unitGeneratorResults');
+
+const suggestedUnits = {
+    'Year 1': {
+        'K16 Economics and Finance': ['Principles of Microeconomics', 'Business Accounting Basics', 'Quantitative Skills', 'Introductory Finance'],
+        'K14 Economics Pure': ['Foundations of Economics', 'Mathematical Economics', 'Economic Models', 'Theory of Demand'],
+        'K24 Economics and Statistics': ['Introductory Statistics', 'Foundations of Economics', 'Data Interpretation', 'Applied Quantitative Methods'],
+        'UCU 110 Communication and Skills': ['Academic Writing', 'Oral Communication', 'Study Strategies', 'Critical Reading'],
+        'BBA 102 Principles of Management': ['Management Process', 'Organizational Behavior', 'Leadership Basics', 'Decision Making'],
+        'BAC 101 Fundamentals of Accounting': ['Accounting Equation', 'Financial Statements', 'Bookkeeping', 'Introduction to Assets'],
+    },
+    'Year 2': {
+        'K16 Economics and Finance': ['Intermediate Microeconomics', 'Corporate Finance', 'Cost Accounting', 'Economic Policy'],
+        'K14 Economics Pure': ['Intermediate Macroeconomics', 'Mathematical Optimization', 'Market Structures', 'Economic Growth'],
+        'K24 Economics and Statistics': ['Probability & Statistics', 'Regression Analysis', 'Econometrics Basics', 'Applied Data Models'],
+        'UCU 110 Communication and Skills': ['Professional Communication', 'Presentation Skills', 'Research Writing', 'Collaboration Techniques'],
+        'BBA 102 Principles of Management': ['Strategic Management', 'Operations Management', 'Human Resource Principles', 'Organizational Design'],
+        'BAC 101 Fundamentals of Accounting': ['Cost Accounting', 'Management Accounting', 'Budgeting', 'Accounting Controls'],
+    },
+    'Year 3': {
+        'K16 Economics and Finance': ['Advanced Macroeconomics', 'Financial Markets', 'Investment Analysis', 'Policy Evaluation'],
+        'K14 Economics Pure': ['Advanced Economic Theory', 'Economic Measurement', 'Macroeconomic Policy', 'Mathematical Economics II'],
+        'K24 Economics and Statistics': ['Advanced Econometrics', 'Time Series Analysis', 'Statistical Software', 'Big Data in Economics'],
+        'UCU 110 Communication and Skills': ['Negotiation Skills', 'Leadership Communication', 'Conflict Resolution', 'Advanced Report Writing'],
+        'BBA 102 Principles of Management': ['Corporate Strategy', 'Change Management', 'Ethics in Management', 'Project Management'],
+        'BAC 101 Fundamentals of Accounting': ['Financial Reporting', 'Audit Principles', 'Taxation Basics', 'Corporate Accounting'],
+    },
+    'Year 4': {
+        'K16 Economics and Finance': ['Financial Modelling', 'Portfolio Management', 'Policy Research', 'Capstone Projects'],
+        'K14 Economics Pure': ['Research Methods', 'Advanced Theoretical Economics', 'Project Work', 'Independent Study Topics'],
+        'K24 Economics and Statistics': ['Applied Statistics Projects', 'Policy Evaluation', 'Data Science Techniques', 'Final Research Preparation'],
+        'UCU 110 Communication and Skills': ['Executive Communication', 'Media Literacy', 'Public Speaking', 'Career Communication'],
+        'BBA 102 Principles of Management': ['Executive Leadership', 'Organizational Change', 'Business Analytics', 'Capstone Strategy'],
+        'BAC 101 Fundamentals of Accounting': ['Advanced Financial Reporting', 'Risk Management', 'Forensic Accounting', 'Professional Practice'],
+    },
+};
+
+function renderUnitGeneratorResults() {
+    const year = unitYearSelect.value;
+    const subject = unitSubjectSelect.value;
+    const units = suggestedUnits[year]?.[subject];
+    if (!units) {
+        unitGeneratorResults.innerHTML = '<p>Choose a year and subject to view suggested revision units.</p>';
+        return;
+    }
+    unitGeneratorResults.innerHTML = `
+        <h3>Suggested revision units for ${year} — ${subject}</h3>
+        <ul class="unit-results-list">
+            ${units.map(unit => `<li>${unit}</li>`).join('')}
+        </ul>
+    `;
+}
+
+generateUnitsBtn.addEventListener('click', renderUnitGeneratorResults);
+
 authButton.addEventListener('click', () => showAuthModal('signin'));
 authCloseBtn.addEventListener('click', closeAuthModal);
 authForm.addEventListener('submit', handleAuthSubmit);
